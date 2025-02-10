@@ -1,0 +1,23 @@
+<section class="home my-3 ">
+
+<div class="container">
+  <div class="row g-4">
+    <!-- in this loop we can make limit the number of films using movies.Slice(0,10)  it will show first 10 films -->
+   @for (movie of movies; track  movie.id) {
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <!-- the api has two part (basic) and pastePath -->
+        <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Title" />
+        <div class="card-body">
+          <!-- in this api some films haven't title but have name and reflect is correct (titile or name) -->
+          <h4 class="card-title">Title: {{movie.title}} {{movie.name}}</h4>
+          <p class="card-text">OverView: {{movie.overview}}</p>
+        </div>
+      </div>
+
+    </div>
+   }
+  </div>
+</div>
+</section>
